@@ -37,7 +37,7 @@ let catchPrice = 0;
 
 while (true) {
     const fish = generateRandomFish();
-    console.log(`The time is ${hour}:${min}am. So far you've caught: ${catchCount} fish, ${catchWeight} lbs, $${catchPrice}`);
+    console.log(`The time is ${hour}:${min}am. So far you've caught: ${catchCount} fish, ${catchWeight.toFixed(2)} lbs, $${catchPrice.toFixed(2)}`);
     console.log("");
     console.log(fish);
     console.log("");
@@ -49,6 +49,7 @@ while (true) {
         console.log(`You chose to keep the ${fishAdd.name}!`);
         catchedFish.push(fishAdd);
         catchCount++
+        catchWeight += parseFloat(fishAdd.weight)
 
         console.log("========================================================================");
 
