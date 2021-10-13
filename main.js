@@ -25,14 +25,41 @@ function generateRandomFish() {
     fishAdd.weight = weight;
     fishAdd.price = price;
 
-    return "You caught a " +fishFullName +" weighing " +weight +" lbs" +" and valued at $" +price;
+    return `You caught a ${fishFullName} weighing ${weight} lbs and valued at $${price}`;
 }
 
+const catchedFish = [];
+let hour = 6;
+let min = 0;
+let catchCount = 0;
+let catchWeight = 0;
+let catchPrice = 0;
+
 while (true) {
-    console.log("The time is 6:00am. So far you've caught: 0 fish, 0 lbs, $0.00");
+    const fish = generateRandomFish();
+    console.log(`The time is ${hour}:${min}am. So far you've caught: ${catchCount} fish, ${catchWeight} lbs, $${catchPrice}`);
+    console.log("");
+    console.log(fish);
+    console.log("");
 
     const action = prompt(`Your action: [c]atch or [r]elease?`);
-    const fish = generateRandomFish();
-    const weight = generateRandomFish();
-    console.log(fish);
+    console.log("");
+
+    if (action === "c") {
+        console.log(`You chose to keep the ${fishAdd.name}!`);
+        catchedFish.push(fishAdd);
+        catchCount++
+
+        console.log("========================================================================");
+
+    } else if (action === "r") {
+        console.log(`You chose to release the ${fishAdd.name}!`);
+
+        console.log("========================================================================");
+
+    } else {
+        console.log("That is not a valid option, try again")
+
+        console.log("========================================================================");
+    }
 }
