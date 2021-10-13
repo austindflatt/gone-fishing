@@ -5,17 +5,27 @@ console.log("You've gone fishing! Try to maximize the value of your caught fish.
 
 console.log("========================================================================");
 
+const fishAdd = {};
+
 function generateRandomFish() {
 
     const fishes = {
-        firstAdjective: ["Slimy, Deepsea, Purple, Grey"],
+        firstAdjective: ["Slimy", "Deepsea", "Purple", "Grey"],
         secondAdjective: ["Scaly", "Bigmouthed", "Finned", "Bottom-dwelling"],
         fishName: ["Bass", "Salmon", "Trout", "Catfish", "Herring", "Angler"],
-        weight: "[4.50, 0.24, 1.42, 9.56, 20.03, 22.98, 15.46, 7.75, 12.23]",
-        price: "[0.05, 3.12, 9.24, 22.18, 34.58, 26.65, 14.70, 42.44]"
     }
 
-    return fishes.fishName[Math.floor(Math.random() * fishes.fishName.length)];
+    let fishFullName = fishes.firstAdjective[Math.floor(Math.random() * fishes.firstAdjective.length)] + " " +
+    fishes.secondAdjective[Math.floor(Math.random() * fishes.secondAdjective.length)] + " " +
+    fishes.fishName[Math.floor(Math.random() * fishes.fishName.length)]
+    let weight = ((Math.random() * 1000) / 100).toFixed(2);
+    let price = ((Math.random() * 1000) / 100).toFixed(2);
+
+    fishAdd.name = fishFullName;
+    fishAdd.weight = weight;
+    fishAdd.price = price;
+
+    return "You caught a " +fishFullName +" weighing " +weight +" lbs" +" and valued at $" +price;
 }
 
 while (true) {
