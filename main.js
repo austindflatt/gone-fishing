@@ -6,9 +6,11 @@ console.log("You've gone fishing! Try to maximize the value of your caught fish.
 console.log("========================================================================");
 
 const fishes = {
-    fishName: "[Slimy Scaly Bass], [Slimy Scaly Bass], [Slimy Scaly Bass]",
-    weight: "[4.50, 0.24, 1.42, 9.56, 20.03]",
-    price: "[0.05, 3.12, 9.24, 22.18, 34.58]"
+    firstAdjective: "[Slimy], [Deepsea], [Purple], [Grey]",
+    secondAdjective: "[Scaly], [Bigmouthed], [Finned], [Bottom-dwelling]",
+    fishName: "[Bass], [Salmon], [Trout], [Catfish], [Herring], [Angler]",
+    weight: "[4.50, 0.24, 1.42, 9.56, 20.03, 22.98, 15.46, 7.75, 12.23]",
+    price: "[0.05, 3.12, 9.24, 22.18, 34.58, 26.65, 14.70, 42.44]"
 }
 
 while (true) {
