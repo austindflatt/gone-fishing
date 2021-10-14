@@ -32,9 +32,7 @@ function randomClock(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 randomMin = randomClock(00, 60);
-
 const catchedFish = [];
 let hour = 6;
 let min = 0;
@@ -46,7 +44,11 @@ let totalPrice = 0;
 
 while (hour < 12 && catchWeight < 10) {
     const fish = generateRandomFish();
-    console.log(`The time is ${hour}:${min}am. So far you've caught: ${catchCount} fish, ${catchWeight.toFixed(2)} lbs, $${catchPrice.toFixed(2)}`);
+    if (min < 10) {
+        console.log(`The time is ${hour}:${min}0am. So far you've caught: ${catchCount} fish, ${catchWeight.toFixed(2)} lbs, $${catchPrice.toFixed(2)}`);
+    } else {
+        console.log(`The time is ${hour}:${min}am. So far you've caught: ${catchCount} fish, ${catchWeight.toFixed(2)} lbs, $${catchPrice.toFixed(2)}`);
+    }
     console.log("");
     console.log(fish);
     console.log("");
