@@ -5,7 +5,7 @@ console.log("You've gone fishing! Try to maximize the value of your caught fish.
 
 console.log("========================================================================");
 
-const fishAdd = {};
+let fishAdd = {};
 
 function generateRandomFish() {
 
@@ -20,7 +20,7 @@ function generateRandomFish() {
     fishes.fishName[Math.floor(Math.random() * fishes.fishName.length)]
     let weight = ((Math.random() * 1000) / 100).toFixed(2);
     let price = ((Math.random() * 1000) / 100).toFixed(2);
-
+    fishAdd = {};
     fishAdd.name = fishFullName;
     fishAdd.weight = weight;
     fishAdd.price = price;
@@ -84,14 +84,14 @@ while (hour < 12 && catchWeight < 10) {
 if (hour === 12) {
     console.log("The time is 12:00pm. Times up!");
     console.log(`You caught ${catchCount} fish:`);
-    for (let i = 0; i < catchedFish.length - 1; i++) {
+    for (let i = 0; i < catchedFish.length; i++) {
         let storedFish = catchedFish[i];
         totalWeight += Number(storedFish.weight);
         totalPrice += Number(storedFish.price);
         console.log(`* ${storedFish.name}, ${storedFish.weight} lbs, $${storedFish.price}`);
     }
     console.log(`Total weight: ${totalWeight.toFixed(2)} lbs`);
-    console.log(`Total value: $${totalWeight.toFixed(2)}`);
+    console.log(`Total value: $${totalPrice.toFixed(2)}`);
 }
 
 if (catchWeight >= 10) {
@@ -99,12 +99,12 @@ if (catchWeight >= 10) {
     const endGame = prompt(`Press [enter] to continue.`);
     endGame;
     console.log(`You caught ${catchCount} fish:`);
-    for (let i = 0; i < catchedFish.length - 1; i++) {
+    for (let i = 0; i < catchedFish.length; i++) {
         let storedFish = catchedFish[i];
         totalWeight += Number(storedFish.weight);
         totalPrice += Number(storedFish.price);
         console.log(`* ${storedFish.name}, ${storedFish.weight} lbs, $${storedFish.price}`);
     }
     console.log(`Total weight: ${totalWeight.toFixed(2)} lbs`);
-    console.log(`Total value: $${totalWeight.toFixed(2)}`);
+    console.log(`Total value: $${totalPrice.toFixed(2)}`);
 }
