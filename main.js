@@ -10,9 +10,9 @@ let fishAdd = {};
 function generateRandomFish() {
 
     const fishes = {
-        firstAdjective: ["Slimy", "Deepsea", "Purple", "Grey"],
-        secondAdjective: ["Scaly", "Bigmouthed", "Finned", "Bottom-dwelling"],
-        fishName: ["Bass", "Salmon", "Trout", "Catfish", "Herring", "Angler"],
+        firstAdjective: ["Slimy", "Deepsea", "Purple", "Grey", "Blue", "Red", "Yellow", "Enormous", "Small", ""],
+        secondAdjective: ["Scaly", "Bigmouthed", "Finned", "Bottom-dwelling", "Super-scaly", "Largemouth", "Smallmouthed", "Spotted", "Fast-swimming", "Atlantic"],
+        fishName: ["Bass", "Salmon", "Trout", "Catfish", "Herring", "Angler", "Tuna", "Billfish", "Carp", "Cod"],
     }
 
     let fishFullName = fishes.firstAdjective[Math.floor(Math.random() * fishes.firstAdjective.length)] + " " +
